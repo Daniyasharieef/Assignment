@@ -35,7 +35,6 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-//Applying get request.
 
   Future<List<User>> getRequest() async {
     //replace your restFull API here.
@@ -44,7 +43,6 @@ class _HomePageState extends State<HomePage> {
 
     var responseData = json.decode(response.body);
 
-    //Creating a list to store input data;
     List<User> users = [];
     for (var singleUser in responseData) {
       User user = User(
@@ -53,7 +51,6 @@ class _HomePageState extends State<HomePage> {
           title: singleUser["title"],
           body: singleUser["body"]);
 
-      //Adding user to the list.
       users.add(user);
     }
     return users;
@@ -139,10 +136,7 @@ class _HomePageState extends State<HomePage> {
                         ),
                       ])
                     ],
-                    // title: Text(snapshot.data[index].id.toString()),
-                    // subtitle: Text(snapshot.data[index].userId.toString()),
-                    // contentPadding: EdgeInsets.only(bottom: 20.0),
-                    // leading: Text(snapshot.data[index].title),
+                
                   ),
                 );
               }
